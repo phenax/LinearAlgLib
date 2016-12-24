@@ -1,3 +1,4 @@
+
 class Vector(object):
     def __init__(self, coordinates):
         try:
@@ -19,6 +20,9 @@ class Vector(object):
 
     def __eq__(self, v):
         return self.coordinates == v.coordinates
+
+    def __getitem__(self, index):
+        return self.coordinates[index]
 
     # Adds vector v with itself and returns a vector that is the sum of both 
 
@@ -45,11 +49,3 @@ class Vector(object):
         for i in range(n):
             new.append(self.coordinates[i] * c) 
         return Vector(new)
-
-# Test code, will be removed soon 
-
-v1 = Vector([-1,2,3])
-v2 = Vector([1,2,3])
-print v1.plus(v2)
-print v1.minus(v2)
-print v1.sc_mult(3) 
